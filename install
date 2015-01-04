@@ -51,7 +51,7 @@ iptables -P INPUT DROP #Ban any other port from coming into the server
 
 # Save, restart and Show the user again the iptables just for shits and giggles 
 /sbin/service iptables save #Save the Tables 
-service iptables restart #restart the tables 
+/sbin/service iptables restart #restart the tables 
 iptables -L #lets look at the tables 
 
  
