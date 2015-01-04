@@ -52,7 +52,7 @@ iptables -P INPUT DROP #Ban any other port from coming into the server
 # Save, restart and Show the user again the iptables just for shits and giggles 
 iptables-save #Save the Tables 
 service iptables restart #restart the tables 
-sudo tee /etc/sysconfig/iptables #lets look at the tables 
+iptables -L #lets look at the tables 
 
  
 # Start Postgres now and start on server restart 
