@@ -59,6 +59,37 @@ iptables -L #lets look at the tables
 service postgresql-9.4 start
 chkconfig postgresql-9.4 on
 
+# Modify the postgres database so that main user has password 
+su - postgres 
+psql 
+password postgres 
+MonkeysLegs89!
+MonkeysLegs89!
+\q
+
+#Modify so admin pack is installed
+su -postres 
+psql 
+CREATE EXTENSION adminpack;
+\q
+
+#Create new User and Database 
+su - postgres 
+createuser truecode
+createdb ttfmg_database
+psql 
+
+# Add Password to user truecode 
+alter user senthil with encrypted password 'MonkeysLegs89!';
+grant all privileges on database mydb to senthil;
+
+#Install PGAdmin 
+yum install epel-release
+yum update
+yum install phpPgAdmin httpd
+service httpd start
+chkconfig httpd on
+
 
 #install the base packages 
 yum install cpio.x86_64 -y
