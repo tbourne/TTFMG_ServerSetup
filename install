@@ -50,7 +50,7 @@ iptables -P OUTPUT ACCEPT #Allow all outgoing transmitions... Lets face it if so
 iptables -P INPUT DROP #Ban any other port from coming into the server 
 
 # Save, restart and Show the user again the iptables just for shits and giggles 
-iptables-save #Save the Tables 
+/sbin/service iptables save #Save the Tables 
 service iptables restart #restart the tables 
 iptables -L #lets look at the tables 
 
